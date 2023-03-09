@@ -48,7 +48,6 @@ const inquirerMenu = async () => {
     console.log('====================='.bgMagenta);
 
     const opt = await inquirer.prompt(menuOpts)
-    console.log('OPT: ',opt)
     return opt;
 
 }
@@ -88,7 +87,6 @@ const inquireListadoTarea = async (tareas = []) => {
     ]
     
     const optId = await inquirer.prompt(menuOpts)
-    //console.log(optId.optId)
     return optId.optId;
 }
 
@@ -122,7 +120,6 @@ const inquireListadoTareaPorCompletar = async (tareas = []) => {
     ]
     
     const optId = await inquirer.prompt(menuOpts)
-    //console.log(optId.optId)
     return optId.optId;
 }
 

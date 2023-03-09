@@ -1,4 +1,3 @@
-//const fs = require('fs');
 import * as fs from 'fs';
 
 const file = './db/data.json';

@@ -9,29 +9,17 @@ console.clear();
 
 
 const main = async ()=>{
-    console.log('Hola Munid')
-    //mostrarMenu();
-
     let opt = "";
     const tareas = new Tareas();
 
     const tareasDB = readDB();
 
     if( tareasDB ){
-        //cargar tareas
         tareas.cargarTareasFromArray(tareasDB);
     }
 
     do{
-        //opt = await mostrarMenu();
-
-        //Print Menu
-        opt = await inquirerMenu();
-
-        //const tarea = new Tarea('Comida ..');
-        //console.log(tarea);
-
-        //await pausa();
+        opt = await inquirerMenu(); 
 
         switch (opt.opt) {
             case '1':
@@ -49,14 +37,12 @@ const main = async ()=>{
             break;
             case '5':
                 const completar = await inquireListadoTareaPorCompletar(tareas.listadoArr);
-                console.log(completar);
                 tareas.toggleComplete(completar);
             break;
             case '6':
                 const id = await inquireListadoTarea(tareas.listadoArr);
-                console.log(id);
                 const confirm = await confirmar('Deseas borrar tarea ');
-                console.log(confirm);
+                console.clear();
                 confirm.confirm ? tareas.borrarTarea(id): console.log('=== Cancelado ===');
             break;
         }
